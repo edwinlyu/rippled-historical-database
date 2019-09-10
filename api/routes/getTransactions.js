@@ -116,13 +116,6 @@ var getTransactions = function (req, res, next) {
       return;
     }
 
-    if (isNaN(options.limit)) {
-      options.limit = 20;
-
-    } else if (options.limit > 100) {
-      options.limit = 100;
-    }
-
     // require valid transaction type
     if (options.type && txTypes.indexOf(options.type) === -1) {
       errorResponse({
